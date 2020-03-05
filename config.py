@@ -19,16 +19,16 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/nCov?charset=utf8".format(password, host)
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/recommend?charset=utf8".format(password, host)
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/nCov?charset=utf8".format(password, host)
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/recommend?charset=utf8".format(password, host)
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/nCov?charset=utf8".format(password, host)
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:{}@{}/recommend?charset=utf8".format(password, host)
 
     @classmethod
     def init_app(cls, app):

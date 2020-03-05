@@ -15,7 +15,7 @@
     <tbody>
     {% for i in pagination.items %}
         <tr>
-            <td>{{ i.problemId }}</td>
+			<td> <a href="https://codeforces.com/problemset/problem/{{i.problemId}}/{{ i.problemId[-1] }}" title="problem_url">{{ i.problemId }}</td>
             <td>{{ i.recommend_level }}</td>
             <td>{{ i.difficulty }}</td>
             <td>{{ i.tag }}</td>
@@ -23,7 +23,7 @@
     {% endfor %}
   </tbody>
     </table>
-<h1>render_pagination</h1>
-    {{ render_pagination(pagination) }}
+
+	{{ render_pagination(pagination,endpoint='api.result', args={"username":username}, align='center') }}
 
 {% endblock %}

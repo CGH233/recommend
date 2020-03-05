@@ -2,7 +2,7 @@
 import os
 from . import api
 from app import db
-from app.db import Recommend
+from app.models import Recommend
 from flask import request
 from flask import render_template
 from flask_wtf import FlaskForm
@@ -21,17 +21,18 @@ def index():
     return render_template('index.html')
 
 
-@api.route('/search/', methods=['GET', 'POST'])
+@api.route('/search', methods=['GET', 'POST'])
 def search():
     form = Form()
     if request.method == 'GET':
         return render_template('search.html', form=form)
     if request.method == 'POST':
         username = form.username.data
-        pagination = Recommend.query.filter_by(username=username).order_by(Recommend.tag.desc()).paginate(1,
+        page = request.args.get('page', 1, type=int)
+        pagination = Recommend.query.filter_by(username=username).order_by(Recommend.tag.asc()).paginate(page,
                                                                                                           per_page=10,
                                                                                                           error_out=False)
-        if pagination is None:
+        if not pagination.items:
             try:
                 recommend.read_problems()
                 recommend.read_users_ability(username)
@@ -42,22 +43,23 @@ def search():
                     db.session.execute(
                         Recommend.__table__.insert(),
                         [{"username": username,
-                          "problemId": problem_ID,
-                          "recommend_level": recommended_value,
-                          "difficulty": problems_dic[problem_ID]['difficulty'],
+                          "problemId": str(problem_ID),
+                          "recommend_level": str(recommended_value),
+                          "difficulty": str(problems_dic[problem_ID]['difficulty']),
                           "tag": i} for problem_ID, recommended_value in recommended_result[i]]
                     )
                     db.session.commit()  # 太烂了,我都要哭了
                 pagination = Recommend.query.filter_by(username=username).order_by(Recommend.tag.desc()).paginate(1,
                                                                                                                   per_page=10,
                                                                                                                   error_out=False)
-            except():
+                print(pagination)
+            except IOError:
                 return render_template('error.html', username=username)
-        return render_template('result.html', pagination=pagination)
+        return render_template('result.html', pagination=pagination, username=username)
 
 
 @api.route('/result/<int:page>, <username>', methods=['GET', 'POST'])
 def result(page=1, username=None):
     pagination = Recommend.query.filter_by(username=username).order_by(Recommend.tag.desc()).paginate(page, per_page=10,
                                                                                                       error_out=False)
-    return render_template('result.html', pagination=pagination)
+    return render_template('result.html', pagination=pagination, username=username)
