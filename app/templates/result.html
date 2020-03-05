@@ -15,7 +15,7 @@
     <tbody>
     {% for i in pagination.items %}
         <tr>
-			<td> <a href="https://codeforces.com/problemset/problem/{{i.problemId}}/{{ i.problemId[-1] }}" title="problem_url">{{ i.problemId }}</td>
+			<td> <a href="https://codeforces.com/problemset/problem/{{i.problemId[:-2]}}/{{ i.problemId[-1] }}" title="problem_url">{{ i.problemId }}</td>
             <td>{{ i.recommend_level }}</td>
             <td>{{ i.difficulty }}</td>
             <td>{{ i.tag }}</td>
