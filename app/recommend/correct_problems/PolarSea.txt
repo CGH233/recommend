@@ -1,0 +1,6 @@
+{'ID': '1214A', 'difficulty': 1300, 'tag': '6'}
+{'ID': '4A', 'difficulty': 1200, 'tag': '6'}
+{'ID': '1206A', 'difficulty': 800, 'tag': '7'}
+{'ID': '1195A', 'difficulty': 1100, 'tag': '7'}
+{'ID': '1313D', 'difficulty': 2600, 'tag': '8'}
+{'ID': '1215B', 'difficulty': 1500, 'tag': '8'}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/pagination.html' import render_pager, render_pagination %}
+
+{% block content %}
+    <h1>推荐结果</h1>
+    <table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>题目编号</th>
+            <th>推荐指数</th>
+            <th>题目难度</th>
+            <th>类别</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in pagination.items %}
+        <tr>
+            <td>{{ i.problemId }}</td>
+            <td>{{ i.recommend_level }}</td>
+            <td>{{ i.difficulty }}</td>
+            <td>{{ i.tag }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+    </table>
+<h1>render_pagination</h1>
+    {{ render_pagination(pagination) }}
+
+{% endblock %}

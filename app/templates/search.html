@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+
+{% block content %}
+    <h1>请输入用户名</h1>
+    <form method="post">
+    {{ form.csrf_token }}
+    {{ render_field(form.username) }}
+    {{ render_field(form.submit) }}
+    </form>
+
+{% endblock %}

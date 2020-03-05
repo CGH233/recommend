@@ -1,0 +1,10 @@
+{'ID': '1295A', 'difficulty': 900, 'tag': '0'}
+{'ID': '459A', 'difficulty': 1300, 'tag': '2'}
+{'ID': '282A', 'difficulty': 900, 'tag': '2'}
+{'ID': '266A', 'difficulty': 800, 'tag': '2'}
+{'ID': '116A', 'difficulty': 800, 'tag': '2'}
+{'ID': '4A', 'difficulty': 1200, 'tag': '6'}
+{'ID': '1311A', 'difficulty': 700, 'tag': '7'}
+{'ID': '1296B', 'difficulty': 1000, 'tag': '7'}
+{'ID': '1296A', 'difficulty': 800, 'tag': '7'}
+{'ID': '1A', 'difficulty': 1300, 'tag': '7'}

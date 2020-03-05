@@ -1,0 +1,16 @@
+{'ID': '977A', 'difficulty': 500, 'tag': '2'}
+{'ID': '1296C', 'difficulty': 1500, 'tag': '5'}
+{'ID': '1296C', 'difficulty': 1500, 'tag': '5'}
+{'ID': '1311A', 'difficulty': 700, 'tag': '7'}
+{'ID': '1285A', 'difficulty': 700, 'tag': '7'}
+{'ID': '1296B', 'difficulty': 1000, 'tag': '7'}
+{'ID': '1296A', 'difficulty': 800, 'tag': '7'}
+{'ID': '1294C', 'difficulty': 1300, 'tag': '7'}
+{'ID': '1294A', 'difficulty': 900, 'tag': '7'}
+{'ID': '1141A', 'difficulty': 1000, 'tag': '7'}
+{'ID': '39D', 'difficulty': 1100, 'tag': '7'}
+{'ID': '1249C1', 'difficulty': 1300, 'tag': '8'}
+{'ID': '1307A', 'difficulty': 800, 'tag': '8'}
+{'ID': '1311B', 'difficulty': 1200, 'tag': '9'}
+{'ID': '1296D', 'difficulty': 1500, 'tag': '9'}
+{'ID': '1294B', 'difficulty': 1200, 'tag': '9'}
